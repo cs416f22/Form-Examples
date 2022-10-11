@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A page created to read key value pairs in the passed URL</title>
+</head>
+<body>
+
+    <div id="results"></div>
+    <!--Change the href part with the name of your page storing the form elements-->
+    <a href="forms.html">Back to Form</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+
+    <script>
+        // Read each key value pairs in the passed URL e.g., name=john
+        // and append to div by separating with : like name: john
+        new window.URLSearchParams(window.location.search).forEach(((value, key) => {
+            $('#results').append(key + ": " + value + "<br>");
+        }));
+
+    </script>
+
+</body>
+</html>
